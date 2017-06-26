@@ -1,0 +1,113 @@
+OK
+fn classiObj objetos=
+
+	(
+
+		
+
+		if(objetos.count>0 or objetos!=undefined)then
+
+		(
+
+			for i in objetos where(superclassof i !=spacewarpobject)do (append obj i);
+
+			mr= for i in obj where (i.wirecolor == red and i.scale !=[1,1,1])collect i;
+
+			vb= for i in obj where(i.wirecolor==green and i.scale ==[1,1,1])collect i;
+
+			
+
+			ec=for i in obj where(i.wirecolor != red and i.scale !=[1,1,1])collect i;
+
+			ei= for i in obj where(i.wirecolor != green and i.scale ==[1,1,1])collect i;
+
+			
+
+		)	
+
+		stringei ="Green_"+((ei.count) as string);
+
+		messagebox stringei;
+
+    		
+
+	);classiObj()
+--End FuncOK
+classiObj $*
+-- Error occurred in anonymous codeblock; filename: ; position: 528; line: 16
+-- No ""append"" function for undefined
+-- MAXScript callstack:
+--	thread data: threadID:1680
+--	------------------------------------------------------
+--	[stack level: 0]
+--	In i loop; filename: ; position: 529; line: 16
+--		Parameters:
+--			i: $Box:Box001 @ [35.625366,51.435410,0.000000]
+--		Locals:
+--			obj: undefined
+--			i: $Box:Box001 @ [35.625366,51.435410,0.000000]
+--		Externals:
+--			owner: undefined
+--	------------------------------------------------------
+--	[stack level: 1]
+--	called from classiObj(); filename: ; position: 531; line: 16
+--		Parameters:
+--			objetos: $$objects/.../*
+--		Locals:
+--			obj: undefined
+--			vb: undefined
+--			mr: undefined
+--			ei: undefined
+--			objetos: $$objects/.../*
+--			ec: undefined
+--			stringei: undefined
+--		Externals:
+--			owner: undefined
+--	------------------------------------------------------
+--	[stack level: 2]
+--	called from top-level
+fn classiObj objetos=
+
+	(
+
+		mr=#();
+
+		vb=#();
+
+		ec=#();
+
+		ei=#();
+
+		obj=#();
+
+		if(objetos.count>0 or objetos!=undefined)then
+
+		(
+
+			for i in objetos where(superclassof i !=spacewarpobject)do (append obj i);
+
+			mr= for i in obj where (i.wirecolor == red and i.scale !=[1,1,1])collect i;
+
+			vb= for i in obj where(i.wirecolor==green and i.scale ==[1,1,1])collect i;
+
+			
+
+			ec=for i in obj where(i.wirecolor != red and i.scale !=[1,1,1])collect i;
+
+			ei= for i in obj where(i.wirecolor != green and i.scale ==[1,1,1])collect i;
+
+			
+
+		)	
+
+		stringei ="Green_"+((ei.count) as string);
+
+		messagebox stringei;
+
+    		
+
+	);classiObj()
+--End FuncOK
+classiObj $*
+
+OK
