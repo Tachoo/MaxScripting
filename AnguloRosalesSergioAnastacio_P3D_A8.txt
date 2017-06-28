@@ -459,3 +459,4 @@ LPHP() $selection
 
 -- Argument count error: LPHP wanted 1, got 0
 $selection
+OK
