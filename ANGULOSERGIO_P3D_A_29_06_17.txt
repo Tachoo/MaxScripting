@@ -1,0 +1,273 @@
+OK
+box name:"caja";$Box:caja @ [0.000000,0.000000,0.000000]
+
+
+	addmodifier $caja (turbosmooth iterations: 2 );OK
+OK
+	$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);false
+OK
+	$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);true
+OK
+$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);false
+
+$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);true
+
+$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);false
+
+$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);true
+
+$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);false
+
+$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);true
+
+$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);false
+
+$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);true
+
+$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);false
+
+
+$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);true
+
+$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);false
+
+$caja.modifiers[1].enabled = not($caja.modifiers[1].enabled);true
+
+
+modscena=#();#()
+
+
+		for a in objects do
+
+			(
+
+				--todos los objetos
+
+				for b in a.modifiers do
+
+					(
+
+						--cada uno de los modificadores los a;adimos a el arreglo.
+
+						appendifunique modscena ( (classof b)as string )
+
+					)
+
+			)OK
+OK
+
+OK
+modscena
+
+#("TurboSmooth", "Taper")
+for o in objects do for n=o.modifiers.count to 1 by-1 where (classof o.modifiers[n]==modscena[n])do deletemodifier o n;OK
+OK
+for o in objects do for n=o.modifiers.count to 1 by-1 where (classof o.modifiers[n]==modscena[n])do( deletemodifier o n;)OK
+for o in objects do for n=o.modifiers.count to 1 by-1 where ( ((classof o.modifiers[n])as string)==modscena[n])do( deletemodifier o n;)OK
+for o in geometry do for m in o.modifiers do m.enabled=false;OK
+OK
+classof $caja.modifiers[2]
+UndefinedClass
+classof $caja.modifiers[2]
+UndefinedClass
+classof $caja.modifiers[1]
+
+Taper
+classof $caja.modifiers[1] as string =="Taper"
+
+true
+for o in objects do for n=o.modifiers.count to 1 by-1 where (  classof $caja.modifiers[n].name ==modscena[n] )do( deletemodifier o n;)OK
+modscena=#();#()
+
+
+		for a in objects do
+
+			(
+
+				--todos los objetos
+
+				for b in a.modifiers do
+
+					(
+
+						--cada uno de los modificadores los a;adimos a el arreglo.
+
+						appendifunique modscena ( (classof b)as string )
+
+					)
+
+			)OK
+modscena#("Taper")
+			for o in objects do for n=o.modifiers.count to 1 by-1 where (  classof $caja.modifiers[n].name ==modscena[n] )do( deletemodifier o n;)OK
+			for o in objects do for n=o.modifiers.count to 1 by-1 where (  classof $caja.modifiers[n].name ==modscena[n] )do(  messagebox "Son iguales ")OK
+			for o in objects do for n=o.modifiers.count to 1 by-1 where (  classof o.modifiers[n].name ==modscena[n] )do(  messagebox "Son iguales ")OK
+			for o in objects do for n=o.modifiers.count to 1 by-1 where (classof o.modifiers[n].name==modscena[n])do deletemodifier o n;OK
+OK
+for o in geometry do for m in o.modifiers do m.enabled=false;OK
+OK
+modscena=#();#()
+
+
+		for a in objects do
+
+			(
+
+				--todos los objetos
+
+				for b in a.modifiers do
+
+					(
+
+						--cada uno de los modificadores los a;adimos a el arreglo.
+
+						appendifunique modscena ( (classof b)as string )
+
+					)
+
+			)OK
+modscena#("Uvwmap", "TurboSmooth", "Taper", "Spherify")
+			for o in objects do for n=o.modifiers.count to 1 by-1 where (classof o.modifiers[n].name==modscena[n])do deletemodifier o n;OK
+OK
+for o in objects do for n=o.modifiers.count to 1 by-1 do
+
+				( 
+
+					if
+
+						(classof o.modifiers[n].name==modscena[n])do
+
+					(
+
+					deletemodifier o n
+
+					)
+
+				);OK
+OK
+			for o in objects do for n=o.modifiers.count to 1 by-1 where (o.modifiers[n].name==modscena[n])do deletemodifier o n;OK
+OK
+modscena=#();#()
+
+
+		for a in objects do
+
+			(
+
+				--todos los objetos
+
+				for b in a.modifiers do
+
+					(
+
+						--cada uno de los modificadores los a;adimos a el arreglo.
+
+						appendifunique modscena ( (classof b)as string )
+
+					)
+
+			)OK
+modscena#("SpacePathDeform", "Uvwmap", "MapScaler", "Spherify")
+			for o in objects do for n=o.modifiers.count to 1 by-1 where (o.modifiers[n].name==modscena[n])do deletemodifier o n;OK
+OK
+for o in geometry do for m in o.modifiers do
+
+				(
+
+					if (o.modifiers[m].name==modscena[m])do
+
+					(
+
+						deletemodifier o m;
+
+					)
+
+					m.enabled=false
+
+				);-- Error occurred in anonymous codeblock; filename: C:\Users\Tachoo\Documents\ProgramacionMaxScript\ANGULOSERGIO_P3D_A_29_06_17.ms; position: 797; line: 21
+-- Type error: Modifier array index must be number or name, got: SpacePathDeform:Path Deform Binding
+-- MAXScript callstack:
+--	thread data: threadID:11356
+--	------------------------------------------------------
+--	[stack level: 0]
+--	In m loop; filename: C:\Users\Tachoo\Documents\ProgramacionMaxScript\ANGULOSERGIO_P3D_A_29_06_17.ms; position: 798; line: 21
+--		Parameters:
+--			m: SpacePathDeform:Path Deform Binding
+--		Locals:
+--			m: SpacePathDeform:Path Deform Binding
+--		Externals:
+--			o: Free:o : $Editable_Mesh:caja @ [0.000000,0.000000,0.000000]
+--			modscena: Global:modscena : #("SpacePathDeform", "Uvwmap", "MapScaler", "Spherify")
+--			owner: undefined
+--	------------------------------------------------------
+--	[stack level: 1]
+--	called from o loop; filename: C:\Users\Tachoo\Documents\ProgramacionMaxScript\ANGULOSERGIO_P3D_A_29_06_17.ms; position: 873; line: 26
+--		Parameters:
+--			o: $Editable_Mesh:caja @ [0.000000,0.000000,0.000000]
+--		Locals:
+--			o: $Editable_Mesh:caja @ [0.000000,0.000000,0.000000]
+--		Externals:
+--			owner: undefined
+--	------------------------------------------------------
+--	[stack level: 2]
+--	called from top-level
+OK
+modscena=#();#()
+
+
+		for a in objects do
+
+			(
+
+				--todos los objetos
+
+				for b in a.modifiers do
+
+					(
+
+						--cada uno de los modificadores los a;adimos a el arreglo.
+
+						appendifunique modscena ( (classof b)as string )
+
+					)
+
+			)OK
+modscena#("SpacePathDeform", "TurboSmooth", "Uvwmap", "MapScaler", "Spherify")
+			for o in objects do for n=o.modifiers.count to 1 by-1 where (classof o.modifiers[n]==turbosmooth)do deletemodifier o n;OK
+OK
+			for o in objects do for n=o.modifiers.count to 1 by-1 where (classof o.modifiers[n].name=="TurboSmooth")do deletemodifier o n;OK
+OK
+			for o in objects do for n=o.modifiers.count to 1 by-1 where (o.modifiers[n].name=="TurboSmooth")do deletemodifier o n;OK
+OK
+modscena#("SpacePathDeform", "TurboSmooth", "Uvwmap", "MapScaler", "Spherify")
+			for o in objects do for n=o.modifiers.count to 1 by-1 where (o.modifiers[n].name==modscena[2])do deletemodifier o n;OK
+OK
+			for o in objects do for n=o.modifiers.count to 1 by-1 where (o.modifiers[n].name==modscena[n])do deletemodifier o n;OK
+OK
+			for o in objects do for n=o.modifiers.count to 1 by-1 where (o.modifiers[n].name==modscena[o])do deletemodifier o n;-- Error occurred in anonymous codeblock; filename: C:\Users\Tachoo\Documents\ProgramacionMaxScript\ANGULOSERGIO_P3D_A_29_06_17.ms; position: 853; line: 19
+-- Runtime error: array index must be positive number, got: $caja
+-- MAXScript callstack:
+--	thread data: threadID:11356
+--	------------------------------------------------------
+--	[stack level: 0]
+--	In n loop; filename: C:\Users\Tachoo\Documents\ProgramacionMaxScript\ANGULOSERGIO_P3D_A_29_06_17.ms; position: 832; line: 19
+--		Parameters:
+--			n: 3
+--		Locals:
+--			n: 3
+--		Externals:
+--			o: Free:o : $Editable_Mesh:caja @ [0.000000,0.000000,0.000000]
+--			modscena: Global:modscena : #("SpacePathDeform", "TurboSmooth", "Uvwmap", "MapScaler", "Spherify")
+--			owner: undefined
+--	------------------------------------------------------
+--	[stack level: 1]
+--	called from o loop; filename: C:\Users\Tachoo\Documents\ProgramacionMaxScript\ANGULOSERGIO_P3D_A_29_06_17.ms; position: 854; line: 19
+--		Parameters:
+--			o: $Editable_Mesh:caja @ [0.000000,0.000000,0.000000]
+--		Locals:
+--			o: $Editable_Mesh:caja @ [0.000000,0.000000,0.000000]
+--		Externals:
+--			owner: undefined
+--	------------------------------------------------------
+--	[stack level: 2]
+--	called from top-level
+OK
